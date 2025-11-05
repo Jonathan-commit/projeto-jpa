@@ -62,7 +62,7 @@ public class Controller implements CommandLineRunner {
 		 // atualizar funcionario na tabela      
 		 funcionarioDto.setNome("Maria"); // informacao nova
 		 funcionarioDto.seteMail("exemplo@maria.com"); // se repete todos os campos de atributos, mesmo mudando apenas um dos parametros
-		 funcionarioDto.setSenha("1234"); // alterado
+		 funcionarioDto.setSenha("6666"); // alterado
 		 funcionarioDto.setSalario(5000);  // alterado
 		 funcionarioDto.setDepartamento(4); // repete // 1 = departamento a qual pertence
 	     funcionarioService.atualizarFuncionario(3, funcionarioDto); // 1 = id do funcionario, da tabela funcionario.
