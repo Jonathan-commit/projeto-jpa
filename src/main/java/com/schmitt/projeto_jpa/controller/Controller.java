@@ -58,11 +58,12 @@ public class Controller implements CommandLineRunner {
 		// funcionarioService.deletarFuncionario(3);  // numero 2 se refere ao id da coluna  linha 2 na tabela do banco de dados.
 		
 		 System.out.println(funcionarioService.listarFuncionarios());
-		 
+
+		 /*
 		 for (FuncionarioResponseDto f : funcionarioService.listarFuncionarios()) {
 				System.out.println(f);
 			}
-		 
+*/		 
 /*		 // atualizar funcionario na tabela      
 		 funcionarioDto.setNome("Maria"); // informacao nova
 		 funcionarioDto.seteMail("exemplo@maria.com"); // se repete todos os campos de atributos, mesmo mudando apenas um dos parametros

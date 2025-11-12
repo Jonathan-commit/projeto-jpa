@@ -5,7 +5,11 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor // substitui o metodo public FuncionarioDto () normal super() e atributos
+@NoArgsConstructor  // substitui o metodo public FuncionarioDto () construtor vazio
 public class FuncionarioDto {
 	
 	private int idFuncionario;
@@ -24,7 +28,7 @@ public class FuncionarioDto {
 	private double salario;
 	private int idDepartamento; // nao pode ser instanciado pelo danco de dados, por isso usa o int departamento
 	
-	
+/*	
 	public FuncionarioDto(int idFuncionario, String nome, String eMail, String senha, double salario,
 			int idDepartamento) {
 		super();
@@ -35,12 +39,12 @@ public class FuncionarioDto {
 		this.salario = salario;
 		this.idDepartamento = idDepartamento;
 	}
-	
-	
+*/	
+/*	
 	public FuncionarioDto () {
 		
 	}
-	
+*/	
 	public int getIdFuncionario() {
 		return idFuncionario;
 	}
