@@ -59,7 +59,11 @@ public class Controller implements CommandLineRunner {
 		
 		 System.out.println(funcionarioService.listarFuncionarios());
 		 
-		 // atualizar funcionario na tabela      
+		 for (FuncionarioResponseDto f : funcionarioService.listarFuncionarios()) {
+				System.out.println(f);
+			}
+		 
+/*		 // atualizar funcionario na tabela      
 		 funcionarioDto.setNome("Maria"); // informacao nova
 		 funcionarioDto.seteMail("exemplo@maria.com"); // se repete todos os campos de atributos, mesmo mudando apenas um dos parametros
 		 funcionarioDto.setSenha("6666"); // alterado
@@ -67,7 +71,7 @@ public class Controller implements CommandLineRunner {
 		 funcionarioDto.setDepartamento(4); // repete // 1 = departamento a qual pertence
 	     funcionarioService.atualizarFuncionario(3, funcionarioDto); // 1 = id do funcionario, da tabela funcionario.
 	     // atualiza a partir do id da service que vem da tabela danco dados.
-		
+*/		
 
 		
 		 System.out.println("hello world");
