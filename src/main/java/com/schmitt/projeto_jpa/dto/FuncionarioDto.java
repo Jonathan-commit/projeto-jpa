@@ -6,10 +6,17 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+// abaixo uso do lombok para reduzir o codigo, substituindo metodos padroes.
 @AllArgsConstructor // substitui o metodo public FuncionarioDto () normal super() e atributos
 @NoArgsConstructor  // substitui o metodo public FuncionarioDto () construtor vazio
+@Getter            // substitui os getters e setters
+@Setter
+@ToString          // substitui metodo ToString
 public class FuncionarioDto {
 	
 	private int idFuncionario;
@@ -45,6 +52,7 @@ public class FuncionarioDto {
 		
 	}
 */	
+/*	
 	public int getIdFuncionario() {
 		return idFuncionario;
 	}
@@ -81,13 +89,14 @@ public class FuncionarioDto {
     public void setDepartamento(int idDepartamento) {
 		this.idDepartamento = idDepartamento;
 	}
-    
+*/
+/*
 	@Override
 	public String toString() {
 		return "\nFuncionarioDto [idFuncionario=" + idFuncionario + ", nome=" + nome + ", eMail=" + eMail + ", senha="
 				+ senha + ", salario=" + salario + ", departamento=" + idDepartamento + "]";
 	}
-	
+*/	
 	
 	
 
