@@ -27,7 +27,7 @@ public class FuncionarioService {
 	// create
 	public void cadastrarFuncionario (@Valid FuncionarioDto funcionarioDto) {
 		
-		if(repositorioFuncionario.existsByEMail(funcionarioDto.geteMail())) {
+		if(repositorioFuncionario.existsByEMail(funcionarioDto.getEmail())) {
 			throw new RuntimeException("Email já existe");
 		}
 		
@@ -36,14 +36,14 @@ public class FuncionarioService {
 		
 		// outra forma de fazer
 		// validacao de regra de negocio
-		DepartamentoEntity departamentoEntity = repositorioDepartamento.findById(funcionarioDto.getDepartamento())
+		DepartamentoEntity departamentoEntity = repositorioDepartamento.findById(funcionarioDto.getIdDepartamento())
 				.orElseThrow(()-> new RuntimeException("Departamento nao existe"));
 		
 		
 		FuncionarioEntity funcionarioEntity = new FuncionarioEntity();
 		
 		funcionarioEntity.setNome(funcionarioDto.getNome());
-		funcionarioEntity.seteMail(funcionarioDto.geteMail()); //
+		funcionarioEntity.seteMail(funcionarioDto.getEmail()); //
 		funcionarioEntity.setSenha(funcionarioDto.getSenha());
 		funcionarioEntity.setSalario(funcionarioDto.getSalario());
 		// funcionarioEntity.setDepartamento(departamento.get()); // get nao precisa para a outra forma de fazer a avalidacao
@@ -70,10 +70,10 @@ public class FuncionarioService {
 			
 			funcionarioDto.setIdFuncionario(f.getIdFuncionario());
 			funcionarioDto.setNome(f.getNome());
-			funcionarioDto.seteMail(f.geteMail());
+			funcionarioDto.setEmail(f.geteMail());
 			funcionarioDto.setSenha(f.getSenha());
 			funcionarioDto.setSalario(f.getSalario());
-			funcionarioDto.setDepartamento(f.getDepartamento().getIdDepartamento());
+			funcionarioDto.setIdDepartamento(f.getDepartamento().getIdDepartamento());
 			
 			listaFuncionarioDto.add(funcionarioDto);
 		}
@@ -101,17 +101,17 @@ public class FuncionarioService {
         			.orElseThrow(()-> new RuntimeException("Funcionario nao existe"));
         	// outra forma de fazer
     		// validacao de regra de negocio
-        	if(repositorioFuncionario.existsByEMailAndIdFuncionarioNot(funcionarioDto.geteMail(), id)) {
+        	if(repositorioFuncionario.existsByEMailAndIdFuncionarioNot(funcionarioDto.getEmail(), id)) {
         		throw new RuntimeException("Email ja cadastrado");
         	} 			
         	// outra forma de fazer
     		// validacao de regra de negocio
-        	DepartamentoEntity departamentoEntity = repositorioDepartamento.findById(funcionarioDto.getDepartamento())
+        	DepartamentoEntity departamentoEntity = repositorioDepartamento.findById(funcionarioDto.getIdDepartamento())
     				.orElseThrow(()-> new RuntimeException("Departamento nao existe"));
 		
 		funcionarioEntity.setIdFuncionario(id);
 		funcionarioEntity.setNome(funcionarioDto.getNome());
-		funcionarioEntity.seteMail(funcionarioDto.geteMail());
+		funcionarioEntity.seteMail(funcionarioDto.getEmail());
 		funcionarioEntity.setSenha(funcionarioDto.getSenha());
 		funcionarioEntity.setSalario(funcionarioDto.getSalario());
 		//funcionarioEntity.setDepartamento(departamento.get()); // pega o valor do Optional localizou
